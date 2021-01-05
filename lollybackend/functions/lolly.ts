@@ -8,6 +8,9 @@ export const handler = async (
   event: EventBridgeEvent<string, any>,
   context: Context
 ) => {
+  var Pipparams = {
+    name: "LollyPipiline",
+  };
   try {
 
     if (event["detail-type"] === "createVlolly") {
@@ -15,20 +18,11 @@ export const handler = async (
         TableName: TABLE_NAME,
         Item: { ...event.detail },
       };
-      var Pipparams = {
-        name: "LollyPipiline",
-      };
+      
       await dynamoClient.put(params).promise();
       await codepipeline
         .startPipelineExecution(
           Pipparams,
-          function (error: any, Lollydata: any) {
-            if (error) {
-              console.log(error);
-            } else {
-              console.log(Lollydata);
-            }
-          }
         )
         .promise();
       return event.detail;

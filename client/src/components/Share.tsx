@@ -11,7 +11,7 @@ const Share: React.FC<ResultProps> = ({ id, receiver, message, sender }) => {
     return (
         <div>
             <h4>Share lolly with this link:</h4>
-            <h3>{`d39nzanfgybe3.cloudfront.net/${id}`}</h3>
+            <h3>{`d1n9o2aye1szps.cloudfront.net/${id}`}</h3>
             <div className="result__details">
                 <p className="reciever">To____{receiver}</p>
                 <p className="message">MSG____{message}</p>

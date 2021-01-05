@@ -237,7 +237,7 @@ export class LollybackendStack extends cdk.Stack {
           actionName: "Checkout",
           owner: "shamaz332",
           repo: "VLOLLY-EventBridge-AWS",
-          oauthToken: cdk.SecretValue.secretsManager("GITHUB_TOKENN"), ///create token on github and save it on aws secret manager
+          oauthToken: cdk.SecretValue.secretsManager("GITHUB_TO"), ///create token on github and save it on aws secret manager
           output: sourceOutput, ///Output will save in the sourceOutput Artifact
           branch: "master", ///Branch of your repo
         }),
