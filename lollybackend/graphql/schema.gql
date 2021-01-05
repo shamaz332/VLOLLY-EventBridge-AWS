@@ -1,0 +1,28 @@
+type Vlolly {
+  id: ID!
+  receiver: String!
+  message: String!
+  sender: String!
+  top: String!
+  middle: String!
+  bottom: String!
+}
+type Event {
+  result: String
+}
+input VlollyInput {
+  id: ID
+  receiver: String
+  message: String
+  sender: String
+  top: String
+  middle: String
+  bottom: String
+}
+type Query {
+  listVlolly: [Vlolly]
+}
+type Mutation {
+  createVlolly(lolly: VlollyInput): Event
+  deleteVlolly(lollyId: ID): String
+}
