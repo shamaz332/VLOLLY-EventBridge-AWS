@@ -1,5 +1,5 @@
 var plugins = [{
-      plugin: require('/home/shamaz/web root/2020 bootcamp/projects after 13/13C/client/gatsby-ssr'),
+      plugin: require('/home/shamaz/web root/2020 bootcamp/projects after 12/14/Vlolly/client/gatsby-ssr'),
       options: {"plugins":[]},
     }]
 // During bootstrap, we write requires at top of this file which looks like:
