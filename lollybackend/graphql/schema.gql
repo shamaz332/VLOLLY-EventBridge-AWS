@@ -23,6 +23,6 @@ type Query {
   listVlolly: [Vlolly]
 }
 type Mutation {
-  createVlolly(lolly: VlollyInput): Event
+  createVlolly(lolly: VlollyInput): Vlolly
   deleteVlolly(lollyId: ID): String
 }

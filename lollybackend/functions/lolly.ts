@@ -9,15 +9,15 @@ export const handler = async (
   context: Context
 ) => {
   try {
-    var Pipparams = {
-      name: "LollyPipiline",
-    };
+
     if (event["detail-type"] === "createVlolly") {
       const params = {
         TableName: TABLE_NAME,
         Item: { ...event.detail },
       };
-
+      var Pipparams = {
+        name: "LollyPipiline",
+      };
       await dynamoClient.put(params).promise();
       await codepipeline
         .startPipelineExecution(

@@ -174,7 +174,7 @@ export class LollybackendStack extends cdk.Stack {
       enableIpv6: true,
     });
 
-    new s3Deployment.BucketDeployment(this, "deploylolly", {
+    new s3Deployment.BucketDeployment(this, "deployment", {
       sources: [s3Deployment.Source.asset("../client/public")],
       destinationBucket: lollyBucket,
       distribution: lollyDist,
@@ -223,7 +223,7 @@ export class LollybackendStack extends cdk.Stack {
     //----pipiline creation-----
 
     const pipeline = new CodePipeline.Pipeline(this, "LollyPipeline", {
-      pipelineName: 'LollyPipiline',
+      pipelineName:"LollyPipiline",
       crossAccountKeys: false, //Pipeline construct creates an AWS Key Management Service (AWS KMS) which cost $1/month. this will save your $1.
       restartExecutionOnUpdate: true, //Indicates whether to rerun the AWS CodePipeline pipeline after you update it.
     });
@@ -237,7 +237,7 @@ export class LollybackendStack extends cdk.Stack {
           actionName: "Checkout",
           owner: "shamaz332",
           repo: "VLOLLY-EventBridge-AWS",
-          oauthToken: cdk.SecretValue.secretsManager("GITHUB_TOKEN"), ///create token on github and save it on aws secret manager
+          oauthToken: cdk.SecretValue.secretsManager("GITHUB_TOKENN"), ///create token on github and save it on aws secret manager
           output: sourceOutput, ///Output will save in the sourceOutput Artifact
           branch: "master", ///Branch of your repo
         }),
